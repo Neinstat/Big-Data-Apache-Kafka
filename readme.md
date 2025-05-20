@@ -1,19 +1,22 @@
 # Problem Based Learning: Apache Kafka
 
-| Nama | Muhammad Andrean Rizq Prasetio |
-| NRP | 5027231052 |
-
+| Nama    | Muhammad Andrean Rizq Prasetio |
+| -------- | ------- |
+| NRP  | 5027231052    |
 
 ---
 
 ##  Struktur Direktori Project
 
-├── Big-Data-Apache-Kafka
-│   ├── Spark-Streaming
-│   │   ├── Consumer_filter.py
-│   │   ├── Consumer_join.py
-│   ├── producer_kelembapan.py
-│   ├── producer_suhu.py
+```
+Big-Data-Apache-Kafka
+│   README.md
+|   producer_suhu.py
+│   producer_kelembapan.py    
+└───Spark-Streaming
+│   │   consumer_filter.py
+│   └───consumer_join.py
+```
 
 ---
 
@@ -62,13 +65,10 @@ bin/kafka-topics.sh --create \
 ```
 
 Penjelasan Opsi
---topic: nama topik yang ingin dibuat
-
---bootstrap-server: alamat broker Kafka (biasanya localhost:9092 saat lokal)
-
---partitions 1: satu partisi cukup untuk simulasi ini
-
---replication-factor 1: satu replika cukup karena tidak ada cluster
+- Topic: nama topik yang ingin dibuat
+- Bootstrap-server: alamat broker Kafka (biasanya localhost:9092 saat lokal)
+- Partitions 1: satu partisi cukup untuk simulasi ini
+- Replication-factor 1: satu replika cukup karena tidak ada cluster
 
 Jika berhasil, terminal akan menampilkan:
 
@@ -117,7 +117,7 @@ Setelah data terkirim ke Kafka, tahap berikutnya adalah mengkonsumsi data dan me
 
 ---
 
-## ⚠️ Langkah 4 — Join Dua Stream & Deteksi Bahaya Ganda
+##  Langkah 4 — Join Dua Stream & Deteksi Bahaya Ganda
 
 Langkah ini bertujuan untuk menganalisis data secara real-time dari dua sensor yang berbeda secara **terkait waktu**, agar bisa mendeteksi kondisi gudang yang kritis.
 
@@ -133,7 +133,7 @@ Langkah ini bertujuan untuk menganalisis data secara real-time dari dua sensor y
 ###  Langkah-langkah:
 
 1. **Jalankan consumer join PySpark**
-   - 📄 File: `consumer_join.py`
+   -  File: `consumer_join.py`
    - Fungsi: Melakukan join antara dua stream Kafka (`sensor-suhu-gudang` dan `sensor-kelembaban-gudang`) lalu menampilkan output analitik ke terminal seperti:
 
      ```
