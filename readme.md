@@ -14,8 +14,8 @@ Big-Data-Apache-Kafka
 |   producer_suhu.py
 │   producer_kelembapan.py    
 └───Spark-Streaming
-│   │   consumer_filter.py
-│   └───consumer_join.py
+    └───consumer_filter.py
+    └───consumer_join.py
 ```
 
 ---
